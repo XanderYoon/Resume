@@ -1,0 +1,62 @@
+% Description: This file contains the preamble for the resume. It contains the packages and commands that are used in the resume.
+
+%  Packages
+\usepackage{xparse}
+\usepackage[margin=1.3cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{environ}
+\usepackage{newtxtext,newtxmath}
+\usepackage{anyfontsize}
+\usepackage{enumitem}
+\usepackage{comment}
+
+
+\newcommand{\horizontal}{\vspace{2pt}\hrule}
+\newcommand{\school}[8]{\vspace{2pt}\textsc{\textbf{#1}} \hfill \textbf{\textit{#2}} \\ \textbf{\textit{#3}} \hfill \textit{#4} \\ \textbf{\textit{#5 $\mid$ GPA:}}\textit{#6} \hfill \textit{#7} \begin{itemize}[noitemsep,topsep=0pt] \item #8 \end{itemize}}
+
+\newcommand{\sectitle}[1]{\vspace{3pt} \textbf{\large #1} \horizontal}
+\newcommand{\skill}[2]{\textbf{#1:} #2}
+
+\NewDocumentEnvironment{experience}{mmmm}
+    {
+        \vspace{2pt}
+        \textsc{\textbf{#1}} \hfill #2
+
+        \textit{\textbf{#3 \hfill #4}}
+
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{subexperience}{mm}
+    {
+
+        \textit{\textbf{#1 \hfill #2}}
+
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{project}{mmmm}
+    {
+
+        \textbf{\href{#2}{#1}} $|$ \textit{#3} \hfill \textit{\textbf{#4}}
+
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{experiencenolist}{mmmm}
+    {
+        \vspace{2pt}
+        \textsc{\textbf{#1}} \hfill #2
+
+        \textit{\textbf{#3 \hfill #4}}
+
+    }{}
