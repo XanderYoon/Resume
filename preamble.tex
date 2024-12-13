@@ -1,0 +1,67 @@
+% Description: This file contains the preamble for the resume. It contains the packages and commands that are used in the resume.
+
+% Packages
+\usepackage{xparse}
+\usepackage[margin=1.3cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{environ}
+\usepackage{newtxtext,newtxmath}
+\usepackage{anyfontsize}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{setspace}
+
+\setstretch{1.2}
+
+% Custom Commands
+% Education Section
+\newcommand{\horizontal}{\vspace{2pt}\hrule}
+\newcommand{\school}[7]{
+  \vspace{2pt}
+  \textsc{\textbf{#1}} \hfill \textbf{#2} \\ 
+  \textbf{#3} \hfill \textit{#4} \\ 
+  \textbf{#5} $\mid$ #6 GPA \hfill \textit{#7} \\
+}
+% New Section
+\newcommand{\sectitle}[1]{\vspace{3pt} \textbf{\large \MakeUppercase{#1}} \horizontal \vspace{3pt}}
+% Skill Section
+\newcommand{\skill}[2]{\textbf{#1:} #2}
+
+% Custom Environments
+\NewDocumentEnvironment{experience}{mmmm}
+    {
+        \vspace{2pt}
+        \textsc{\textbf{\large #1}} \hfill \textbf{#2} \\ % Added line break for better alignment
+        \textbf{#3} \hfill \textit{#4} \\ % Improved alignment and formatting
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{subexperience}{mm}
+    {
+        \vspace{2pt}
+        \textit{\textbf{#1}} \hfill \textit{\textbf{#2}} \\ % Added line break for better readability
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{project}{mmmm}
+    {
+        \vspace{2pt}
+        \textsc{\textbf{\large #1}}{#2} $|$ \textit{#3} \hfill \textit{#4} \\
+        \begin{itemize}[noitemsep,topsep=0pt]
+    }
+    {
+        \end{itemize}
+    }
+
+\NewDocumentEnvironment{experiencenolist}{mmmm}
+    {
+        \vspace{2pt}
+        \textsc{\textbf{\large #1}} \hfill \textbf{#2} \\ % Added line break for better alignment
+        \textbf{#3} \hfill \textit{#4} \\ % Improved formatting
+    }{}
